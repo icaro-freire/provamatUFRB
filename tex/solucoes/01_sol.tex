@@ -1,0 +1,60 @@
+%========================
+% Solução da Questão 01
+%========================
+\begin{solution}
+ Nessa questão (e na maioria das que se seguem nessa prova) organização é 
+ fundamental, visto que os cálculos podem ser extensos.
+
+ Todavia, não há nada além da aplicação das definições das funções complexas
+ $ \sen{z} = \frac{e^{iz} -  e^{-iz}}{2i} $ e $ \cos{z} = \frac{e^{iz} + e^{-iz}}{2} $.
+ 
+ Assim, chamando $ E = \frac{2 \sen{i}}{i \cos{i} + \sen{i}} $, precisamos, 
+ inicialmente, encontrar os valores de $ \sen{(i)} $ e $ \cos{(i)} $.
+ Então,
+ 
+ \begin{itemize}
+  \item 
+   $
+    \sen{(\textcolor{red}{i})} 
+    = \frac{e^{i (\textcolor{red}{i})} - e^{-i (\textcolor{red}{i})}}{2i} 
+    = \frac{e^{-1} - e}{2i}
+    = \frac{e^{-1} - e}{2i} \cdot \frac{\textcolor{blue}{(-i)}}{\textcolor{blue}{(-1)}}
+    = \frac{e - 1/e}{2} \cdot i
+    = \frac{e^2 - 1}{2e} \cdot i
+   $
+  \item
+   $
+    \cos{(\textcolor{red}{i})}
+    = \frac{e^{i(\textcolor{red}{i})} + e^{-i(\textcolor{red}{i})}}{2}
+    = \frac{e^{-1} + e}{2}
+    = \frac{e + 1/e}{2}
+    = \frac{e^2 + 1}{2e}
+   $
+ \end{itemize}
+ 
+ Com isso, podemos encontrar, rapidamente:
+ \begin{itemize}
+  \item 
+   $
+    2 \sen{i} 
+    = 2 \left(\, \cdot \frac{e^2 - 1}{2e} \cdot i \,\right)
+    = \frac{e^2 - 1}{e} \cdot i
+   $
+  \item
+  $
+   i \cos{(i)} + \sen{(i)} 
+   = i \cdot \left(\, \frac{e^2 + 1}{2e} \,\right) + \left(\, \frac{e^2 - 1}{2e} \cdot i \,\right)
+   = \frac{2 e^2}{2 e} \cdot i
+   = ei
+  $
+ \end{itemize}
+ 
+ Assim, podemos encontrar o valor da expressão:
+ \[
+  E = \frac{2 \sen{(i)}}{i \cos{(i)} + \sen{(i)}} 
+    = 2 \sen{(i)} \cdot \frac{1}{i \cos{(i)} + \sen{(i)}}
+    = \left(\, \frac{e^2 - 1}{e} \cdot i \,\right) \cdot \left(\, \frac{1}{ei} \,\right) 
+    = \frac{e^2 - 1}{e^2}
+    = \ovalbox{$ 1 - e^{-2} $}.
+ \]
+\end{solution}

@@ -1,0 +1,39 @@
+% arara: lualatex 
+% arara: lualatex if found('log', 'undefined references')
+
+%% arara: clean: { extensions: [log, aux, pdf] }
+
+% classe do documento =========================================================
+
+\documentclass{cls/provamatUFRB}
+
+% comentar, caso não queira exibir as soluções --------------------------------
+\printanswers
+
+% informações necessárias do cabeçalho ----------------------------------------
+\tituloDaProva{Números e Funções Elementares Complexas}
+\curso{Licenciatura em Matemática}
+\semestre{8}
+\disciplina{Variáveis Complexas}
+\prof{Ícaro Vidal Freire}
+\numeroDaProva{I}
+\dataDia{22}
+\dataMes{06}
+\dataAno{2022}
+
+%==============================================================================
+% Início do Documento
+%------------------------------------------------------------------------------
+\begin{document}
+%
+  \titulo
+%
+\begin{questions} 
+  %
+    \input{tex/01_questao.tex}
+  %
+\end{questions}
+
+%------------------------------------------------------------------------------
+\end{document}
+%==============================================================================
