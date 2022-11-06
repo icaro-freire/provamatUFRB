@@ -10,8 +10,8 @@
 %              <creativecommons.org/licenses/by-nc/4.0/>   %
 %----------------------------------------------------------%
 %        Permissões      Condições        Limitações       %
-%      ✔ compartilhar  ⚠ atribuição     ✘ responsabilidade %
-%      ✔ adaptar       ⚠ não comercial  ✘ garantia         %
+%     ✔ compartilhar  ⚠ atribuição     ✘ responsabilidade  %
+%     ✔ adaptar       ⚠ não comercial  ✘ garantia          %
 %----------------------------------------------------------%
 % Versão   : 0.1.0                                         %
 % Descrição: Classe, não oficial, para confecção de        %
@@ -32,19 +32,22 @@
 % indentificações internas ====================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{eadProva}[2022/06/18 v0.1.0
+\ProvidesClass{eadProva}[2022/11/05 v0.2.0
   'Classe extra-oficial para Atividades Avaliativas da UFRB']
 \LoadClass{exam}
 
 % pacotes carregados ==========================================================
 
-\RequirePackage{eulervm} %---------------------------------> fontes matemáticas
+\RequirePackage{euler} %---------------------------------> fontes matemáticas
 
 \RequirePackage{fontspec} %-------------------> seleção e codificação de fontes
-  \setmainfont[Scale = 1.1]{Aref Ruqaa}
-  \setsansfont{Fontin Sans}
-  \setmonofont[Scale = 0.8]{CodeNewRoman Nerd Font}
   \newfontfamily{\intimacy}{intimacy}
+
+\RequirePackage{kpfonts} %-------------------> família de fontes para o corpo
+                         %                     do texto (serif) e detalhes 
+                         %                     (sans serif); texto monoespaçado;
+                         %                     nomath desativa a fonte matemática 
+                         %                     disponível nesse pacote.
 
 \RequirePackage[brazil]{babel} %---------------------------------------> idioma
 
@@ -127,7 +130,7 @@ title={#2},#1}
           \singlespacing 
           \scriptsize
           \begin{enumerate} 
-            \item Essa avaliação terá valor máximo de \textbf{100 pontos}. 
+            \item Essa avaliação terá valor máximo de \textbf{10 pontos}. 
             \item Toda avaliação deve ser feita de caneta \textbf{azul} ou \textbf{preta}. 
             \item Questões rasuradas e sem cálculos serão desconsideradas. 
             \item Se houver indícios de fraude, as provas envolvidas terão pontuações zeradas. 
@@ -170,9 +173,9 @@ title={#2},#1}
       \ovalbox
       {
         \begin{minipage}{0.99\linewidth}
-          {\sffamily \textbf{Professor: }} \@prof
+          {\sffamily \textbf{Professor: } \@prof }
           \hfill
-          {\sffamily \textbf{Disciplina: }} \@disciplina  
+          {\sffamily \textbf{Disciplina: } \@disciplina }
           \phantom{/}
         \end{minipage}
       }
@@ -181,7 +184,7 @@ title={#2},#1}
       \ovalbox
       {
         \begin{minipage}{0.99\linewidth}
-          {\sffamily \textbf{Curso: }} \@curso 
+          {\sffamily \textbf{Curso: } \@curso }
           \hfill
           $ {\@semestre}^{\circ} $ {\sffamily semestre}
           \phantom{/}
@@ -234,7 +237,7 @@ title={#2},#1}
 \renewcommand{\solutiontitle}{\noindent\textbf{\textsf{Solução:}}\enspace}
 
 % configurando o tamanho do texto das soluções
-\SolutionEmphasis{\small}
+\SolutionEmphasis{\small\itshape}
 
 % colocando uma 'sombra' no ambiente da solução 
 \shadedsolutions 
